@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nechaara <nechaara@student.s19.be>         +#+  +:+       +#+        */
+/*   By: nechaara <nechaara.student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/15 12:38:21 by nechaara          #+#    #+#             */
-/*   Updated: 2024/08/19 14:27:30 by nechaara         ###   ########.fr       */
+/*   Updated: 2024/08/20 18:05:13 by nechaara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,10 @@ Fixed::Fixed(const int integer) {
 Fixed::Fixed(const float floating_number) {
 	this->value = roundf(floating_number * (1 << EIGHTBIT));
 }
-
-
+	
 Fixed::~Fixed() {}
 
-Fixed & Fixed::operator=(const Fixed &assign) {
+Fixed & Fixed::operator = (const Fixed &assign) {
 	if (this != &assign)
 		this->value = assign.getRawBits();
 	return (*this);

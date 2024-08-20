@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nechaara <nechaara@student.s19.be>         +#+  +:+       +#+        */
+/*   By: nechaara <nechaara.student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/15 12:38:28 by nechaara          #+#    #+#             */
-/*   Updated: 2024/08/19 14:28:42 by nechaara         ###   ########.fr       */
+/*   Updated: 2024/08/20 18:05:32 by nechaara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ class Fixed
 		Fixed(const float value);
 		Fixed(const Fixed &copy);
 		~Fixed();
-		Fixed & operator=(const Fixed &assign);
+		Fixed& operator = (const Fixed &assign);
 
 		bool operator == (const Fixed &obj) const;
 		bool operator != (const Fixed &obj) const;
