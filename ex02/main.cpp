@@ -6,7 +6,7 @@
 /*   By: nechaara <nechaara@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/15 12:48:01 by nechaara          #+#    #+#             */
-/*   Updated: 2024/08/20 14:25:44 by nechaara         ###   ########.fr       */
+/*   Updated: 2024/09/04 15:48:49 by nechaara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,6 @@ int main( void ) {
     Fixed z = ++x + y++;
     std::cout << "Value of z after ++x + y++: " << z << std::endl;
     std::cout << "Final value of x: " << x << std::endl;
-    std::cout << "Final value of y: " << y << std::endl; 
+    std::cout << "Final value of y: " << y << std::endl;
 	return 0;
 }

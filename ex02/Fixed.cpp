@@ -6,7 +6,7 @@
 /*   By: nechaara <nechaara@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/15 12:38:21 by nechaara          #+#    #+#             */
-/*   Updated: 2024/08/19 14:27:30 by nechaara         ###   ########.fr       */
+/*   Updated: 2024/09/04 15:51:49 by nechaara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,7 +108,13 @@ Fixed Fixed::operator - (const Fixed &obj) const {
 	opt.value = value;
 	return (opt);
 }
-
+/**
+ * @brief The multiplication operator
+ * We multiply the left operant by the right operant then divide it by 2^8.
+ * We then store the result in a new Fixed object and return it.
+ * @param obj The right operant
+ * @return The new Fixed object
+ */
 Fixed Fixed::operator * (const Fixed &obj) const {
 	int		value;
 	Fixed	opt;
@@ -118,6 +124,13 @@ Fixed Fixed::operator * (const Fixed &obj) const {
 	return (opt);
 }
 
+/**
+ * @brief The division operator
+ * We multiply the left operant by 2^8 then divide it by the right operant.
+ * We then store the result in a new Fixed object and return it.
+ * @param obj The right operant
+ * @return The new Fixed object
+ */
 Fixed Fixed::operator / (const Fixed &obj) const {
 	int value;
 	Fixed opt;
@@ -153,7 +166,7 @@ Fixed Fixed::operator -- (int num) {
 	return (opt);
 }
 
-Fixed&	Fixed::min(Fixed const &obj1, Fixed const &obj2)
+Fixed&	Fixed::min(const Fixed &obj1, const Fixed &obj2)
 {
 	if (obj1.getRawBits() < obj2.getRawBits())
 		return ((Fixed&)obj1);
