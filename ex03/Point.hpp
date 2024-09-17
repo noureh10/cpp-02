@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Point.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nechaara <nechaara.student.s19.be>         +#+  +:+       +#+        */
+/*   By: nechaara <nechaara@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 14:28:34 by nechaara          #+#    #+#             */
-/*   Updated: 2024/08/20 18:26:33 by nechaara         ###   ########.fr       */
+/*   Updated: 2024/08/21 15:50:08 by nechaara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,11 @@ class Point {
 		Point(void);
 		Point(const float x, const float y);
 		Point(const Point& copy);
-		Point& Point::operator=(const Fixed &assign);
+		Point &operator = (const Point &assign);
 		~Point();
-		void setPoints(const float x, const float y);
+		Fixed const &getX() const;
+		Fixed const &getY() const;
+
 };
 
 
