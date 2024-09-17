@@ -6,7 +6,7 @@
 /*   By: nechaara <nechaara@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/15 12:38:21 by nechaara          #+#    #+#             */
-/*   Updated: 2024/08/15 13:41:34 by nechaara         ###   ########.fr       */
+/*   Updated: 2024/09/17 13:53:32 by nechaara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,13 @@ void Fixed::setRawBits(const int raw) {
 	this->value = raw;
 }
 
+/**
+ * @brief To Float function
+ * Converts a stored fixed point value to a floating point value.
+ * We divide the stored value by 2^8 to get the floating point value.
+ * We then cast the result to a float.
+ * @return a floating point value 
+ */
 float Fixed::toFloat(void) const {
 	float new_val;
 
@@ -60,12 +67,21 @@ float Fixed::toFloat(void) const {
 	return (new_val);
 }
 
+/**
+ * @brief To Integer function
+ * Converts a stored fixed point value to an integer value.
+ * We divide the stored value by 2^8 to get the integer value.
+ * We then round the result to the nearest integer.
+ * We then cast the result to an integer.
+ * @return an integer value 
+ */
 int Fixed::toInt(void) const {
 	int new_val;
 
 	new_val = ((int)(roundf((float)this->value / (1 << EIGHTBIT))));
 	return (new_val);
 }
+
 
 std::ostream	&operator<<(std::ostream &outputstream, const Fixed &fixed)
 {
