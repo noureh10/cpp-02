@@ -6,7 +6,7 @@
 /*   By: nechaara <nechaara@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/15 12:38:21 by nechaara          #+#    #+#             */
-/*   Updated: 2024/09/04 15:51:49 by nechaara         ###   ########.fr       */
+/*   Updated: 2024/09/29 19:34:39 by nechaara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,11 @@ Fixed::Fixed(const Fixed &copy) {
 }
 
 Fixed::Fixed(const int integer) {
-	this->value = integer << EIGHTBIT;
+	this->value = integer << bits;
 }
 
 Fixed::Fixed(const float floating_number) {
-	this->value = roundf(floating_number * (1 << EIGHTBIT));
+	this->value = roundf(floating_number * (1 << bits));
 }
 
 
@@ -48,14 +48,14 @@ void Fixed::setRawBits(const int raw) {
 float Fixed::toFloat(void) const {
 	float new_val;
 
-	new_val = ((float)this->value / (1 << EIGHTBIT));
+	new_val = ((float)this->value / (1 << bits));
 	return (new_val);
 }
 
 int Fixed::toInt(void) const {
 	int new_val;
 
-	new_val = ((int)(roundf((float)this->value / (1 << EIGHTBIT))));
+	new_val = ((int)(roundf((float)this->value / (1 << bits))));
 	return (new_val);
 }
 
@@ -119,7 +119,7 @@ Fixed Fixed::operator * (const Fixed &obj) const {
 	int		value;
 	Fixed	opt;
 
-	value = (this->value * obj.getRawBits()) / (1 << EIGHTBIT);
+	value = (this->value * obj.getRawBits()) / (1 << bits);
 	opt.value = value;
 	return (opt);
 }
@@ -135,7 +135,7 @@ Fixed Fixed::operator / (const Fixed &obj) const {
 	int value;
 	Fixed opt;
 
-	value = (this->value * (1 << EIGHTBIT)) / obj.getRawBits();
+	value = (this->value * (1 << bits)) / obj.getRawBits();
 	opt.value = value;
 	return (opt);
 }

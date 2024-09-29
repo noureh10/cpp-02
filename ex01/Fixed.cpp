@@ -6,7 +6,7 @@
 /*   By: nechaara <nechaara@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/15 12:38:21 by nechaara          #+#    #+#             */
-/*   Updated: 2024/09/17 13:53:32 by nechaara         ###   ########.fr       */
+/*   Updated: 2024/09/29 19:33:03 by nechaara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,12 @@ Fixed::Fixed(const Fixed &copy) {
 
 Fixed::Fixed(const int integer) {
 	std::cout << "\e[0;33mInt Constructor called\e[0m" << std::endl;
-	this->value = integer << EIGHTBIT;
+	this->value = integer << bits;
 }
 
 Fixed::Fixed(const float floating_number) {
 	std::cout << "\e[0;33mFloat Constructor called\e[0m" << std::endl;
-	this->value = roundf(floating_number * (1 << EIGHTBIT));
+	this->value = roundf(floating_number * (1 << bits));
 }
 
 
@@ -63,7 +63,7 @@ void Fixed::setRawBits(const int raw) {
 float Fixed::toFloat(void) const {
 	float new_val;
 
-	new_val = ((float)this->value / (1 << EIGHTBIT));
+	new_val = ((float)this->value / (1 << bits));
 	return (new_val);
 }
 
@@ -78,7 +78,7 @@ float Fixed::toFloat(void) const {
 int Fixed::toInt(void) const {
 	int new_val;
 
-	new_val = ((int)(roundf((float)this->value / (1 << EIGHTBIT))));
+	new_val = ((int)(roundf((float)this->value / (1 << bits))));
 	return (new_val);
 }
 

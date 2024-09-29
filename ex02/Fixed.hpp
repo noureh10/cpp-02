@@ -6,7 +6,7 @@
 /*   By: nechaara <nechaara@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/15 12:38:28 by nechaara          #+#    #+#             */
-/*   Updated: 2024/08/19 14:25:24 by nechaara         ###   ########.fr       */
+/*   Updated: 2024/09/29 19:34:01 by nechaara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,11 @@
 # include <string>
 # include <cmath>
 
-# define EIGHTBIT 8
-
 class Fixed
 {
 	private:
 		int value;
+		int static const bits = 8;
 	public:
 		Fixed();
 		Fixed(const int value);

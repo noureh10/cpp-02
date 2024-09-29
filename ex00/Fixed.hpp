@@ -6,7 +6,7 @@
 /*   By: nechaara <nechaara@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/15 12:38:28 by nechaara          #+#    #+#             */
-/*   Updated: 2024/09/03 15:48:54 by nechaara         ###   ########.fr       */
+/*   Updated: 2024/09/29 19:31:02 by nechaara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ class Fixed
 {
 	private:
 		int value;
+		int static const bits = 8;
 	public:
 		Fixed(void);
 		Fixed(const Fixed &copy);
